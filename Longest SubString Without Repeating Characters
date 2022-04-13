@@ -1,0 +1,39 @@
+
+
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+       
+        
+        //Aquire until  you became valid  
+        //Release  until you became valid
+        
+        
+        
+        int right = 0;
+        int left =0;
+        int max=0;
+        HashSet<Character> res = new HashSet<>();
+        
+        while(right < s.length()){
+            char c = s.charAt(right);
+            if(res.add(c)){
+               max = Math.max(max,right-left+1) ;
+                right++;
+            }
+            else{
+                while(s.charAt(left) != c){
+                    res.remove(s.charAt(left));
+                        left++;
+                }
+                res.remove(c);
+                left++;
+            }
+        }
+        return max;
+    }
+}
+
+
+Time Complexity :- O(n)
+Space Complexity :- O(n)
+
