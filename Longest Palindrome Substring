@@ -1,0 +1,9 @@
+Approach 2: Expand Around Center
+Algorithm :
+This is an expansion around the Center Technique.
+This is the Best efficient approach to Solve this Problem. Technically there is another algorithm Called Manacher’s Algorithm O(N). It will be hard to implement it in a live interview Session.
+The idea behind the expansion around the Center technique.
+Go to Each index and expand left and right and check whether they are equal. Return the difference in the length of the palindrome for each index.
+If it is greater than the previous element. Make it the Longest Palindrome.
+Repeat it for each element.
+At the End of the traversal, Return the Longest Palindrome Substring.
